@@ -1,55 +1,87 @@
-# Módulo 05 - Iniciando com Playwright
+# 🎭 Linkaí - Automação de Testes com Playwright
 
-## Objetivo
-Este projeto tem como foco o gerenciamento de links pessoais, demonstrando a integração entre uma API REST (Node.js/Express), um Banco de Dados NoSQL (MongoDB) e um WebApp (Frontend). <br>
-E o seu desenvolvimento será realizado com o **Playwright**.
+Este repositório contém a suíte de testes de ponta a ponta (E2E) para o projeto **Linkaí**, um gerenciador de links pessoais que integra uma API REST (Node.js), banco de dados NoSQL (MongoDB) e um Frontend Web (React/Vite).<br>
 
-## Conteúdo Abordado
-* Conteúdo 1 - Primeiros passos com Playwright
-* Conteúdo 2 - Git e Github
-* Conteúdo 3 - Testes Sincronizados com o 
-* Conteúdo 4 - Test Generator
-* Conteúdo 5 - Cobertura de Testes
+O objetivo deste módulo é validar os fluxos críticos da aplicação utilizando as melhores práticas de automação com **Playwright** e **TypeScript**.
 
-## Estrutura do Repositório
+---
+
+## 🛠️ Tecnologias e Ferramentas
+
+- **Linguagem:** [TypeScript](https://www.typescriptlang.org/)
+- **Framework de Testes:** [Playwright](https://playwright.dev/)
+- **Runtime:** [Node.js](https://nodejs.org/)
+- **Infraestrutura:** [Docker](https://www.docker.com/) (para o Banco de Dados)
+- **CI/CD:** GitHub Actions
+
+---
+
+## 📁 Estrutura do Projeto
+
+```text
+playwright-project/
+├── e2e/                    # Scripts de testes automatizados (.spec.ts)
+│   ├── home.spec.ts        # Testes da página inicial
+│   └── login.spec.ts       # Testes do fluxo de autenticação
+├── playwright-report/      # Relatórios HTML gerados após a execução
+├── test-results/           # Artefatos de falhas (screenshots, vídeos, traces)
+├── playwright.config.ts    # Configurações globais do Playwright
+├── package.json            # Gerenciamento de dependências e scripts
+└── README.md               # Documentação do projeto
 ```
-playwright-project/     ← desenvolvimento do código em playwright
-├─ e2e/                 ← onde se encontram os testes
-├─ node_modules/        ← Pasta que contem as dependencias (Pasta Local)
-├─ playwright-report/   ← 
-├─ test-results/        ← onde tras as informações dos resultados
-├─ gitignore            ← onde ficam as informações doq eu não irá subir para o repositorio
-├─ package-lock.json    ← onde ficam as informações do que será instalado no repositorio
-├─ package.json         ← onde se encontra as informações dos projeto
-├─ playwright.cofing.ts ← onde tras as informações dos resultados
-└─ README.md           
+
+---
+
+## 🚀 Pré-requisitos para Execução
+
+Antes de iniciar os testes, é necessário que o ambiente completo do **Linkaí** esteja rodando localmente.
+
+### 1. Banco de Dados (Docker)
+Na raiz da pasta `linkai/apps`, inicie os serviços de banco de dados:
+```bash
+docker-compose up -d
 ```
 
-## Anatoção
-### Como Executar
+### 2. API (Backend)
+Em um novo terminal, acesse `linkai/apps/api`:
+```bash
+npm install   # Caso seja a primeira execução
+npm run dev
+```
 
-#### 1. Startando a API (Backend)
-1. Acesse a pasta `linkai/apps/api`.
-2. Execute: `npm run dev`.
-![Informações do Banco Linkai](doc/InfBDLinkai.png)
+### 3. Web App (Frontend)
+Em outro terminal, acesse `linkai/apps/web`:
+```bash
+npm install   # Caso seja a primeira execução
+npm run dev
+```
+> A aplicação deverá estar disponível em: `http://localhost:3000`
 
-#### 2. Startando a Web (Frontend)
-1. Acesse a pasta `linkai/apps/web`.
-2. Execute: `npm run dev`.
-3. Acesse: `http://localhost:3000`.
-![Aplicação web](doc/aplicacaoWeb.png)
+---
 
-#### 3. Executando os teste
-1. Acesse a pasta `linkai/playwright-project`.
-2. Execute: `npx playwright test`.
+## 🧪 Executando os Testes
 
-### Comandos Principais do Docker
-* `npx playwright test`: Executa todos os testes sem abrir o navegador
-* `npx playwright test --headed`: Executa todos os testes abrindo o navegador
-* `npx playwright test --debug`: Executa os testes em modo debug
+Com a aplicação rodando, acesse a pasta `linkai/playwright-project` e utilize os comandos abaixo:
 
-## Referências
-* [Guia de Instalação do Docker (WSL2)](https://dev.to/papitofernando/instalando-o-docker-no-windows-10-home-ou-professional-com-wsl-2-26m3)
-* [Site Oficial do Docker](https://www.docker.com/)
-* [Documentação Node.js](https://nodejs.org/)
-* [Site Oficial do Playwright](https://playwright.dev/)
+### Instalação de dependências do Playwright
+```bash
+npm install
+npx playwright install --with-deps
+```
+
+### Comandos Principais
+| Comando | Descrição |
+| :--- | :--- |
+| `npx playwright test` | Executa todos os testes em modo headless (sem interface) |
+| `npx playwright test --headed` | Executa os testes exibindo o navegador |
+| `npx playwright test --ui` | Abre a interface interativa do Playwright (recomendado) |
+| `npx playwright test --debug` | Abre o Inspetor do Playwright para depuração passo a passo |
+| `npx playwright show-report` | Abre o último relatório de testes gerado |
+
+---
+
+## 📚 Referências Úteis
+
+- [Documentação Oficial Playwright](https://playwright.dev/docs/intro)
+- [Melhores Práticas em Seletores](https://playwright.dev/docs/locators)
+- [Guia de Instalação Docker (WSL2)](https://dev.to/papitofernando/instalando-o-docker-no-windows-10-home-ou-professional-com-wsl-2-26m3)
