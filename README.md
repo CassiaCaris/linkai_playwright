@@ -16,6 +16,16 @@ O objetivo deste módulo é validar os fluxos críticos da aplicação utilizand
 
 ---
 
+## ## Progresso da Jornada
+
+* [x] Iniciando com Playwright
+    * [x] Primeiros passos com Playwright
+    * [x] Estrutura inicial do projeto
+    * [x] Testes Sincronizados com o código
+    * [x] Test Generator
+    * [x] Cobertura de Testes
+---
+
 ## 📁 Estrutura do Projeto
 
 ```text
@@ -77,6 +87,17 @@ npx playwright install --with-deps
 | `npx playwright test --ui` | Abre a interface interativa do Playwright (recomendado) |
 | `npx playwright test --debug` | Abre o Inspetor do Playwright para depuração passo a passo |
 | `npx playwright show-report` | Abre o último relatório de testes gerado |
+| `npx playwright codegen http://localhost:3000/login` | abre o navegador e o generator para gerar o teste |
+
+---
+
+## 📚 Material de Apoio
+
+As anotações, resumos e conteúdos teóricos deste projeto estão centralizados no repositório:
+
+👉 [jornada_TechQa](https://github.com/CassiaCaris/jornada_TechQa)
+
+Este repositório contém apenas a implementação prática dos conceitos estudados durante a jornada.
 
 ---
 
