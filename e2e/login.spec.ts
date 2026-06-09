@@ -8,8 +8,8 @@ test('deve logar com sucesso', async ({page})=>{
 
     await page.goto('http://localhost:3000/login')
 
-    await page.locator('#username').fill(user.username)
-    await page.locator('#password').fill(user.password)
+    await page.locator('input[placeholder="Seu @username incrível"]').fill(user.username)
+    await page.locator('input[placeholder="Digite sua senha secreta"]').fill(user.password)
 
     await page.locator('button[type="submit"]').click()
 
