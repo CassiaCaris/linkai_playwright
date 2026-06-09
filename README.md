@@ -16,7 +16,7 @@ O objetivo deste módulo é validar os fluxos críticos da aplicação utilizand
 
 ---
 
-## ## Progresso da Jornada
+## Progresso da Jornada
 
 * [x] Iniciando com Playwright
     * [x] Primeiros passos com Playwright
@@ -24,20 +24,33 @@ O objetivo deste módulo é validar os fluxos críticos da aplicação utilizand
     * [x] Testes Sincronizados com o código
     * [x] Test Generator
     * [x] Cobertura de Testes
+* [x] Estrutura, Reuso e Massa de Testes
+    * [x] Page Objects
+    * [x] Components
+    * [ ] Testes de API
+    * [ ] GitHub Actions
+    * [ ] Relatórios
+    * [ ] Projeto final
 ---
 
 ## 📁 Estrutura do Projeto
 
 ```text
 playwright-project/
-├── e2e/                    # Scripts de testes automatizados (.spec.ts)
-│   ├── home.spec.ts        # Testes da página inicial
-│   └── login.spec.ts       # Testes do fluxo de autenticação
-├── playwright-report/      # Relatórios HTML gerados após a execução
-├── test-results/           # Artefatos de falhas (screenshots, vídeos, traces)
-├── playwright.config.ts    # Configurações globais do Playwright
-├── package.json            # Gerenciamento de dependências e scripts
-└── README.md               # Documentação do projeto
+├── e2e/                    ← Scripts de testes automatizados (.spec.ts)
+│   ├── home.spec.ts        
+│   └── login.spec.ts       
+├── playwright-report/      ← Relatórios HTML gerados após a execução
+├── support/                
+│   ├── pages/              ← onde se encontra as informações dos elementos
+│   │   ├── components      ← onde se encontra as informações dos elementos que são gerais para o portal
+│   │   |   ├── Toast.ts
+│   │   ├── DashPage.ts
+│   │   ├── LoginPage.ts    
+├── test-results/           ← Artefatos de falhas (screenshots, vídeos, traces)
+├── playwright.config.ts    ← Configurações globais do Playwright
+├── package.json            ←# Gerenciamento de dependências e scripts
+└── README.md               
 ```
 
 ---
