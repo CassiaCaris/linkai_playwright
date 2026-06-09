@@ -13,28 +13,16 @@ E o seu desenvolvimento será realizado com o **Playwright**.
 
 ## Estrutura do Repositório
 ```
-linkai/                
-├─ apps
-|  ├─ api/                ← Backend (Node.js + Express)
-|  |  ├─ controllers/     ← Lógica das rotas
-|  |  ├─ models/          ← Modelos de dados (Mongoose)
-|  |  ├─ routes/          ← Endpoints da API
-|  |  └─ .env             ← Configurações de ambiente
-|  ├─ web/                ← Frontend (WebApp)
-|  |  └─ dist/            ← Build da aplicação
-|  └─ docker-compose.yaml ← Orquestração do Banco de Dados
-├─ doc/                   ← Documentação e imagens
-├─ playwright-project/     ← desenvolvimento do código em playwright
-|  ├─ e2e/                 ← onde se encontram os testes
-|  ├─ node_modules/        ← Pasta que contem as dependencias (Pasta Local)
-|  ├─ playwright-report/   ← 
-|  ├─ test-results/        ← onde tras as informações dos resultados
-|  ├─ gitignore            ← onde ficam as informações doq eu não irá subir para o repositorio
-|  ├─ package-lock.json    ← onde ficam as informações do que será instalado no repositorio
-|  ├─ package.json         ← onde se encontra as informações dos projeto
-|  ├─ playwright.cofing.ts ← onde tras as informações dos resultados
-|  └─ README.md           
-└─ README.md
+playwright-project/     ← desenvolvimento do código em playwright
+├─ e2e/                 ← onde se encontram os testes
+├─ node_modules/        ← Pasta que contem as dependencias (Pasta Local)
+├─ playwright-report/   ← 
+├─ test-results/        ← onde tras as informações dos resultados
+├─ gitignore            ← onde ficam as informações doq eu não irá subir para o repositorio
+├─ package-lock.json    ← onde ficam as informações do que será instalado no repositorio
+├─ package.json         ← onde se encontra as informações dos projeto
+├─ playwright.cofing.ts ← onde tras as informações dos resultados
+└─ README.md           
 ```
 
 ## Anatoção
