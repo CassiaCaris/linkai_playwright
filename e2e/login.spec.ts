@@ -71,3 +71,35 @@ test('não deve logar quando não informo nenhum dos campos', async ({ page }) =
     await expect(toast.element()).toContainText('Campos obrigatórios')
     await expect(toast.element()).toContainText('Por favor, preencha todos os campos.');
 });
+
+test('não deve logar quando não informo o usuário', async ({ page }) => {
+    const loginPage = getLoginPage(page)
+    const toast = getToast(page)
+
+    const user = {
+        username: '',
+        password: '123456'
+    }
+
+    await loginPage.open()
+    await loginPage.submit(user.username, user.password)
+
+    await expect(toast.element()).toContainText('Campos obrigatórios')
+    await expect(toast.element()).toContainText('Por favor, preencha todos os campos.');
+});
+
+test('não deve logar quando não informo a senha', async ({ page }) => {
+    const loginPage = getLoginPage(page)
+    const toast = getToast(page)
+
+    const user = {
+        username: 'cassia',
+        password: ''
+    }
+
+    await loginPage.open()
+    await loginPage.submit(user.username, user.password)
+
+    await expect(toast.element()).toContainText('Campos obrigatórios')
+    await expect(toast.element()).toContainText('Por favor, preencha todos os campos.');
+});
