@@ -1,22 +1,24 @@
-import {test, expect} from '@playwright/test'
+import { test, expect } from '@playwright/test'
 
-test('deve logar com sucesso', async ({page})=>{
-    const user ={
+test('deve efetuar login com sucesso', async ({ page }) => {
+    const user = {
+        name: 'Cassia',
         username: 'cassia',
         password: 'pwd123'
     }
-
     await page.goto('http://localhost:3000/login')
 
-    await page.locator('input[placeholder="Seu @username incrível"]').fill(user.username)
-    await page.locator('input[placeholder="Digite sua senha secreta"]').fill(user.password)
+    await page
+        .getByRole('textbox', { name: 'Seu @username incrível' })
+        .fill(user.username)
 
-    await page.locator('button[type="submit"]').click()
+    await page
+        .getByRole('textbox', { name: 'Digite sua senha secreta' })
+        .fill(user.password)
 
-    const title = page.locator('h1')
-    await expect(title).toContainText('Olá, Cassia!')
+    await page
+        .getByRole('button', { name: 'Entrar' })
+        .click()
 
-    await page.waitForTimeout(3000)
-
-
-})
+    await expect(page.locator('h1')).toContainText(`Olá, ${user.name}! 👋`)
+});
