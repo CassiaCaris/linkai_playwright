@@ -57,8 +57,8 @@ Durante esta jornada estou praticando e consolidando conhecimentos em:
 
 - [x] Melhorando a legibilidade
 - [x] Como Validar os Atributos dos Elementos?
-- [x] Massa de Testes com Novas ...
-- [ ] Boas Práticas na Separação de ...
+- [x] Massa de Testes com Novas Propriedades
+- [x] Boas Práticas na Separação de Interfaces
 - [ ] O que nuca fazer com Page Objects
 - [ ] Conectando Testes ao Banco de Dados
 - [ ] Testes Independentes
