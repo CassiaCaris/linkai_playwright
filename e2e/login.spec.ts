@@ -4,18 +4,14 @@ import { getLoginPage } from '../support/pages/LoginPage'
 import { getDashPage } from '../support/pages/DashPage'
 import { getToast } from '../support/pages/components/Toast'
 
-import { User } from '../support/fixtures/User'
+import { User, Users } from '../support/fixtures/User'
 
 test('deve efetuar login com sucesso', async ({ page }) => {
     const loginPage = getLoginPage(page)
     const dashPage = getDashPage(page)
     const toast = getToast(page)
 
-    const user: User = {
-        name: 'Cassia',
-        username: 'cassia',
-        password: 'pwd123'
-    }
+    const user: User = Users.success
 
     await loginPage.open()
     await loginPage.submit(user)
@@ -29,10 +25,7 @@ test('não deve logar com senha incorreta', async ({ page }) => {
     const loginPage = getLoginPage(page)
     const toast = getToast(page)
 
-    const user: User = {
-        username: 'cassia',
-        password: '123456'
-    }
+    const user: User = Users.invalidPassword
 
     await loginPage.open()
     await loginPage.submit(user)
@@ -46,10 +39,7 @@ test('não deve logar com usuário não cadastrado', async ({ page }) => {
     const loginPage = getLoginPage(page)
     const toast = getToast(page)
 
-    const user: User = {
-        username: 'Paulo',
-        password: '123456'
-    }
+    const user: User = Users.unregisteredUser
 
     await loginPage.open()
     await loginPage.submit(user)
@@ -62,10 +52,7 @@ test('não deve logar quando não informo nenhum dos campos', async ({ page }) =
     const loginPage = getLoginPage(page)
     const toast = getToast(page)
 
-    const user: User = {
-        username: '',
-        password: ''
-    }
+    const user: User = Users.emptyFields
 
     await loginPage.open()
     await loginPage.submit(user)
@@ -78,10 +65,7 @@ test('não deve logar quando não informo o usuário', async ({ page }) => {
     const loginPage = getLoginPage(page)
     const toast = getToast(page)
 
-    const user: User = {
-        username: '',
-        password: '123456'
-    }
+    const user: User = Users.emptyUsername
 
     await loginPage.open()
     await loginPage.submit(user)
@@ -94,10 +78,7 @@ test('não deve logar quando não informo a senha', async ({ page }) => {
     const loginPage = getLoginPage(page)
     const toast = getToast(page)
 
-    const user: User = {
-        username: 'cassia',
-        password: ''
-    }
+    const user: User = Users.emptyPassword
 
     await loginPage.open()
     await loginPage.submit(user)

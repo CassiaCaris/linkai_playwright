@@ -27,9 +27,9 @@ O objetivo deste módulo é validar os fluxos críticos da aplicação utilizand
 * [x] Estrutura, Reuso e Massa de Testes
     * [x] Page Objects
     * [x] Components
-    * [ ] Testes de API
-    * [ ] GitHub Actions
-    * [ ] Relatórios
+    * [x] Interfaces
+    * [x] Externalização da Massa de Teste
+    * [ ] Deu ruim na massa de Testes
     * [ ] Projeto final
 ---
 
