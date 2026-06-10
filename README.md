@@ -59,7 +59,7 @@ Durante esta jornada estou praticando e consolidando conhecimentos em:
 - [x] Como Validar os Atributos dos Elementos?
 - [x] Massa de Testes com Novas Propriedades
 - [x] Boas Práticas na Separação de Interfaces
-- [ ] O que nuca fazer com Page Objects
+- [x] O que nuca fazer com Page Objects
 - [ ] Conectando Testes ao Banco de Dados
 - [ ] Testes Independentes
 - [ ] Boas práticas & Custom Actions
