@@ -27,7 +27,7 @@ export function getSignupPage(page: Page) {
 
             await page
                 .getByRole('textbox', { name: 'Repita sua senha para garantir!' })
-                .fill(user.password)
+                .fill(user.confirmPassword)
         },
 
         submit: async () => {

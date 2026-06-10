@@ -56,8 +56,8 @@ Durante esta jornada estou praticando e consolidando conhecimentos em:
 ### ✅ Boas Práticas e Integrações
 
 - [x] Melhorando a legibilidade
-- [ ] Como Validar os Atributos dos Elementos?
-- [ ] Massa de Testes com Novas ...
+- [x] Como Validar os Atributos dos Elementos?
+- [x] Massa de Testes com Novas ...
 - [ ] Boas Práticas na Separação de ...
 - [ ] O que nuca fazer com Page Objects
 - [ ] Conectando Testes ao Banco de Dados
@@ -72,7 +72,8 @@ Durante esta jornada estou praticando e consolidando conhecimentos em:
 playwright-project/
 ├── e2e/                    ← Scripts de testes automatizados (.spec.ts)
 │   ├── home.spec.ts        
-│   └── login.spec.ts       
+│   ├── login.spec.ts
+│   └── signup.spec.ts        
 ├── playwright-report/      ← Relatórios HTML gerados após a execução
 ├── support/   
 │   ├── fixtures/           ← onde se encontra as informações das massas de teste
@@ -81,7 +82,8 @@ playwright-project/
 │   │   ├── components      ← onde se encontra as informações dos elementos que são gerais para o portal
 │   │   |   ├── Toast.ts
 │   │   ├── DashPage.ts
-│   │   ├── LoginPage.ts    
+│   │   ├── LoginPage.ts
+│   │   └── SignupPage.ts    
 ├── test-results/           ← Artefatos de falhas (screenshots, vídeos, traces)
 ├── playwright.config.ts    ← Configurações globais do Playwright
 ├── package.json            ←# Gerenciamento de dependências e scripts

@@ -5,14 +5,18 @@ export interface User {
   username: string
   password: string
   email: string
+  confirmPassword: string
 }
 
 export function getNewUser() {
+
+  const defaultPassword = 'pwd123'
   return {
     name: faker.person.fullName(),
     username: faker.internet.username().replace('.', ''),
     email: faker.internet.email(),
-    password: 'pwd123'
+    password: defaultPassword,
+    confirmPassword: defaultPassword
   }
 }
 
