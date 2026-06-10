@@ -41,7 +41,9 @@ playwright-project/
 │   ├── home.spec.ts        
 │   └── login.spec.ts       
 ├── playwright-report/      ← Relatórios HTML gerados após a execução
-├── support/                
+├── support/   
+│   ├── fixtures/           ← onde se encontra as informações das massas de teste
+│   │   ├── Users.ts        ← massas de teste de Login
 │   ├── pages/              ← onde se encontra as informações dos elementos
 │   │   ├── components      ← onde se encontra as informações dos elementos que são gerais para o portal
 │   │   |   ├── Toast.ts
