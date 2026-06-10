@@ -20,11 +20,10 @@ test('deve cadastrar um novo usuário com sucesso', async ({ page }) => {
     await expect(dashPage.welcome()).toContainText(`Olá, ${user.name}! 👋`)
     await expect(toast.element()).toContainText('Conta criada com sucesso!')
     await expect(toast.element()).toContainText('Bem-vindo ao Linkaí. Agora você pode criar seu perfil.');
-});
+})
 
 test('não deve cadastrar quando nenhum campo é informado', async ({ page }) => {
     const signupPage = getSignupPage(page)
-    const dashPage = getDashPage(page)
     const toast = getToast(page)
 
     await signupPage.open()
@@ -32,4 +31,24 @@ test('não deve cadastrar quando nenhum campo é informado', async ({ page }) =>
 
     await expect(toast.element()).toContainText('Campos obrigatórios')
     await expect(toast.element()).toContainText('Por favor, preencha todos os campos.');
-});
+})
+
+test('não deve cadastrar quando o email for incorreto', async ({ page }) => {
+    const signupPage = getSignupPage(page)
+    const toast = getToast(page)
+
+    const user: User = {
+        name: 'Fernando',
+        username: 'fernado',
+        email: 'www.teste.com.br',
+        password: 'pwd123'
+    }
+
+    await signupPage.open()
+    await signupPage.fill(user)
+    await signupPage.submit()
+
+    const email = page.getByPlaceholder('Seu melhor e-mail para receber novidades!')
+
+    await expect(email).toHaveAttribute('type', 'email')
+})
