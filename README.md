@@ -2,7 +2,27 @@
 
 Este repositório contém a suíte de testes de ponta a ponta (E2E) para o projeto **Linkaí**, um gerenciador de links pessoais que integra uma API REST (Node.js), banco de dados NoSQL (MongoDB) e um Frontend Web (React/Vite).<br>
 
-O objetivo deste módulo é validar os fluxos críticos da aplicação utilizando as melhores práticas de automação com **Playwright** e **TypeScript**.
+O objetivo deste módulo é validar os fluxos críticos da aplicação utilizando as melhores práticas de automação com **Playwright** e **TypeScript**. <br>
+
+Também foi utilizado o fakerjs no import para gerar as informações de massa de dados para o cadastro com sucesso.
+
+---
+
+## 🎯 Objetivos de Aprendizagem
+
+Durante esta jornada estou praticando e consolidando conhecimentos em:
+
+- Automação E2E com Playwright
+- TypeScript aplicado à automação de testes
+- Estruturação de projetos de testes
+- Page Object Model (POM)
+- Componentização de elementos
+- Gerenciamento de massa de testes
+- Geração dinâmica de dados com Faker.js
+- Boas práticas de automação
+- Estratégias de manutenção de testes
+- Integração contínua (CI/CD)
+- Automação moderna voltada para QA Engineering
 
 ---
 
@@ -13,24 +33,29 @@ O objetivo deste módulo é validar os fluxos críticos da aplicação utilizand
 - **Runtime:** [Node.js](https://nodejs.org/)
 - **Infraestrutura:** [Docker](https://www.docker.com/) (para o Banco de Dados)
 - **CI/CD:** GitHub Actions
+- **Faker.js:** [Fakerjs](https://fakerjs.dev/) (Gere grandes quantidades de dados falsos (mas realistas) para testes)
 
 ---
 
 ## Progresso da Jornada
 
-* [x] Iniciando com Playwright
-    * [x] Primeiros passos com Playwright
-    * [x] Estrutura inicial do projeto
-    * [x] Testes Sincronizados com o código
-    * [x] Test Generator
-    * [x] Cobertura de Testes
-* [x] Estrutura, Reuso e Massa de Testes
-    * [x] Page Objects
-    * [x] Components
-    * [x] Interfaces
-    * [x] Externalização da Massa de Teste
-    * [ ] Deu ruim na massa de Testes
-    * [ ] Projeto final
+### ✅ Iniciando com Playwright
+
+- [x] Primeiros passos com Playwright
+- [x] Estrutura inicial do projeto
+- [x] Testes Sincronizados com o código
+- [x] Test Generator
+- [x] Cobertura de Testes
+
+### ✅ Estrutura, Reuso e Massa de Testes
+
+- [x] Page Objects
+- [x] Components
+- [x] Interfaces
+- [x] Externalização da Massa de Teste
+- [x] Deu ruim na massa de Testes
+- [x] Faker.js
+
 ---
 
 ## 📁 Estrutura do Projeto
@@ -108,11 +133,19 @@ npx playwright install --with-deps
 
 ## 📚 Material de Apoio
 
-As anotações, resumos e conteúdos teóricos deste projeto estão centralizados no repositório:
+As anotações, resumos e conteúdos teóricos desta jornada estão centralizados no repositório:
 
 👉 [jornada_TechQa](https://github.com/CassiaCaris/jornada_TechQa)
 
 Este repositório contém apenas a implementação prática dos conceitos estudados durante a jornada.
+
+---
+
+## 📈 Evolução do Projeto
+
+Este projeto está sendo construído gradativamente durante a Jornada TechQA e será utilizado como laboratório para aplicação prática dos conceitos aprendidos.
+
+A cada módulo concluído, novas funcionalidades, padrões e melhorias serão incorporadas ao framework.
 
 ---
 
@@ -121,3 +154,4 @@ Este repositório contém apenas a implementação prática dos conceitos estuda
 - [Documentação Oficial Playwright](https://playwright.dev/docs/intro)
 - [Melhores Práticas em Seletores](https://playwright.dev/docs/locators)
 - [Guia de Instalação Docker (WSL2)](https://dev.to/papitofernando/instalando-o-docker-no-windows-10-home-ou-professional-com-wsl-2-26m3)
+- [Documentação Oficial do Fakerjs](https://fakerjs.dev/)
