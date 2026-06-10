@@ -20,9 +20,6 @@ Durante esta jornada estou praticando e consolidando conhecimentos em:
 - Gerenciamento de massa de testes
 - Geração dinâmica de dados com Faker.js
 - Boas práticas de automação
-- Estratégias de manutenção de testes
-- Integração contínua (CI/CD)
-- Automação moderna voltada para QA Engineering
 
 ---
 
@@ -55,6 +52,17 @@ Durante esta jornada estou praticando e consolidando conhecimentos em:
 - [x] Externalização da Massa de Teste
 - [x] Deu ruim na massa de Testes
 - [x] Faker.js
+
+### ✅ Boas Práticas e Integrações
+
+- [x] Melhorando a legibilidade
+- [ ] Como Validar os Atributos dos Elementos?
+- [ ] Massa de Testes com Novas ...
+- [ ] Boas Práticas na Separação de ...
+- [ ] O que nuca fazer com Page Objects
+- [ ] Conectando Testes ao Banco de Dados
+- [ ] Testes Independentes
+- [ ] Boas práticas & Custom Actions
 
 ---
 
