@@ -4,6 +4,8 @@ import { getSignupPage } from '../support/pages/SignupPage'
 import { getDashPage } from '../support/pages/DashPage'
 import { getToast } from '../support/pages/components/Toast'
 
+import { removeUserByEmail } from '../support/database'
+
 import { UserSignup, getNewUser } from '../support/fixtures/User'
 
 test('deve cadastrar um novo usuário com sucesso', async ({ page }) => {
@@ -12,6 +14,7 @@ test('deve cadastrar um novo usuário com sucesso', async ({ page }) => {
     const toast = getToast(page)
 
     const user: UserSignup = getNewUser()
+    await removeUserByEmail(user.email)
 
     await signupPage.open()
     await signupPage.fill(user)

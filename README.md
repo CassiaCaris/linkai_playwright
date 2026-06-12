@@ -165,3 +165,5 @@ A cada módulo concluído, novas funcionalidades, padrões e melhorias serão in
 - [Melhores Práticas em Seletores](https://playwright.dev/docs/locators)
 - [Guia de Instalação Docker (WSL2)](https://dev.to/papitofernando/instalando-o-docker-no-windows-10-home-ou-professional-com-wsl-2-26m3)
 - [Documentação Oficial do Fakerjs](https://fakerjs.dev/)
+- [Documentação Oficial do Node para MongoDB](https://www.npmjs.com/package/mongodb)
+- [Documentação MongoDB](www.mongodb.com)

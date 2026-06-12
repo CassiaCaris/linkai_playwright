@@ -14,7 +14,7 @@ export interface UserLogin {
   password: string
 }
 
-export function getNewUser() {
+export function getFakeUser() {
 
   const defaultPassword = 'pwd123'
   
@@ -22,6 +22,19 @@ export function getNewUser() {
     name: faker.person.fullName(),
     username: faker.internet.username().replace('.', ''),
     email: faker.internet.email(),
+    password: defaultPassword,
+    confirmPassword: defaultPassword
+  }
+}
+
+export function getNewUser() {
+
+  const defaultPassword = 'pwd123'
+  
+  return {
+    name: 'Cassia',
+    username: 'cassia',
+    email: 'cassia@link.ai',
     password: defaultPassword,
     confirmPassword: defaultPassword
   }
