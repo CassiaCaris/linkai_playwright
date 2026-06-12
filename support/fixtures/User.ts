@@ -32,9 +32,22 @@ export function getNewUser() {
   const defaultPassword = 'pwd123'
   
   return {
-    name: 'Cassia',
-    username: 'cassia',
-    email: 'cassia@link.ai',
+    name: 'Cassia Caris',
+    username: 'cassiaCaris',
+    email: 'cassiacaris@link.ai',
+    password: defaultPassword,
+    confirmPassword: defaultPassword
+  }
+}
+
+export function getDuplicateUser() {
+
+  const defaultPassword = 'pwd123'
+  
+  return {
+    name: 'Antonio',
+    username: 'antonio',
+    email: 'antonio@link.ai',
     password: defaultPassword,
     confirmPassword: defaultPassword
   }

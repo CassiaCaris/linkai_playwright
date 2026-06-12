@@ -60,8 +60,8 @@ Durante esta jornada estou praticando e consolidando conhecimentos em:
 - [x] Massa de Testes com Novas Propriedades
 - [x] Boas Práticas na Separação de Interfaces
 - [x] O que nuca fazer com Page Objects
-- [ ] Conectando Testes ao Banco de Dados
-- [ ] Testes Independentes
+- [x] Conectando Testes ao Banco de Dados
+- [x] Testes Independentes
 - [ ] Boas práticas & Custom Actions
 
 ---
@@ -77,13 +77,14 @@ playwright-project/
 ├── playwright-report/      ← Relatórios HTML gerados após a execução
 ├── support/   
 │   ├── fixtures/           ← onde se encontra as informações das massas de teste
-│   │   ├── Users.ts        ← massas de teste de Login
+│   │   └── Users.ts        ← massas de teste de Login
 │   ├── pages/              ← onde se encontra as informações dos elementos
 │   │   ├── components      ← onde se encontra as informações dos elementos que são gerais para o portal
 │   │   |   ├── Toast.ts
 │   │   ├── DashPage.ts
 │   │   ├── LoginPage.ts
 │   │   └── SignupPage.ts    
+│   └── database.ts/        ← onde se encontra as informações do banco de dados para remover o usuário de teste
 ├── test-results/           ← Artefatos de falhas (screenshots, vídeos, traces)
 ├── playwright.config.ts    ← Configurações globais do Playwright
 ├── package.json            ←# Gerenciamento de dependências e scripts

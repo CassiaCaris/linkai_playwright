@@ -4,9 +4,9 @@ import { getSignupPage } from '../support/pages/SignupPage'
 import { getDashPage } from '../support/pages/DashPage'
 import { getToast } from '../support/pages/components/Toast'
 
-import { removeUserByEmail } from '../support/database'
+import { removeUserByEmail, insertUser, removeUserByUsername } from '../support/database'
 
-import { UserSignup, getNewUser } from '../support/fixtures/User'
+import { UserSignup, getNewUser, getDuplicateUser } from '../support/fixtures/User'
 
 test('deve cadastrar um novo usuário com sucesso', async ({ page }) => {
     const signupPage = getSignupPage(page)
@@ -23,6 +23,38 @@ test('deve cadastrar um novo usuário com sucesso', async ({ page }) => {
     await expect(dashPage.welcome()).toContainText(`Olá, ${user.name}! 👋`)
     await expect(toast.element()).toContainText('Conta criada com sucesso!')
     await expect(toast.element()).toContainText('Bem-vindo ao Linkaí. Agora você pode criar seu perfil.');
+})
+
+test('não deve cadastrar quando o email já estiver em uso', async ({ page }) => {
+    const signupPage = getSignupPage(page)
+    const toast = getToast(page)
+
+    const user: UserSignup = getDuplicateUser()
+    await removeUserByEmail(user.email)
+    await insertUser(user)
+
+    await signupPage.open()
+    await signupPage.fill({...user, username: 'Carlos'})
+    await signupPage.submit()
+
+    await expect(toast.element()).toContainText('Oops!')
+    await expect(toast.element()).toContainText('Parece que esse e-mail ou nome de usuário já foi cadastrado. Tente outro, por favor.');
+})
+
+test('não deve cadastrar quando o username já estiver em uso', async ({ page }) => {
+    const signupPage = getSignupPage(page)
+    const toast = getToast(page)
+
+    const user: UserSignup = getDuplicateUser()
+    await removeUserByUsername(user.username)
+    await insertUser(user)
+
+    await signupPage.open()
+    await signupPage.fill({...user, email: 'carlos@link.ai'})
+    await signupPage.submit()
+
+    await expect(toast.element()).toContainText('Oops!')
+    await expect(toast.element()).toContainText('Parece que esse e-mail ou nome de usuário já foi cadastrado. Tente outro, por favor.');
 })
 
 test('não deve cadastrar quando nenhum campo é informado', async ({ page }) => {
