@@ -50,7 +50,7 @@ test('não deve cadastrar quando o username já estiver em uso', async ({ page }
     await insertUser(user)
 
     await signupPage.open()
-    await signupPage.fill({...user, email: 'carlos@link.ai'})
+    await signupPage.fill({...user, email: 'carlos@teste.com.br'})
     await signupPage.submit()
 
     await expect(toast.element()).toContainText('Oops!')

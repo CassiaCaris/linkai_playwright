@@ -4,7 +4,9 @@ Este repositório contém a suíte de testes de ponta a ponta (E2E) para o proje
 
 O objetivo deste módulo é validar os fluxos críticos da aplicação utilizando as melhores práticas de automação com **Playwright** e **TypeScript**. <br>
 
-Também foi utilizado o fakerjs no import para gerar as informações de massa de dados para o cadastro com sucesso.
+Também foi utilizado o **fakerjs** no import para gerar as informações de massa de dados para o cadastro com sucesso. <br>
+
+Utilização de delete e insert no banco de dados do **MongoDB**.
 
 ---
 
@@ -18,7 +20,8 @@ Durante esta jornada estou praticando e consolidando conhecimentos em:
 - Page Object Model (POM)
 - Componentização de elementos
 - Gerenciamento de massa de testes
-- Geração dinâmica de dados com Faker.js
+- Geração dinâmica de dados com **Faker.js**
+- Delete e Insert de massas direto no Banco de Dados usando o **MongoDB**
 - Boas práticas de automação
 
 ---
@@ -31,6 +34,7 @@ Durante esta jornada estou praticando e consolidando conhecimentos em:
 - **Infraestrutura:** [Docker](https://www.docker.com/) (para o Banco de Dados)
 - **CI/CD:** GitHub Actions
 - **Faker.js:** [Fakerjs](https://fakerjs.dev/) (Gere grandes quantidades de dados falsos (mas realistas) para testes)
+- **Banco de Dados:** [MongoDB](www.mongodb.com) (delete e insert de massa de dados) 
 
 ---
 

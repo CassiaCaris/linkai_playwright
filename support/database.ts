@@ -21,7 +21,7 @@ export async function removeUserByUsername(username: string) {
     const result = await client
         .db()
         .collection('users')
-        .deleteOne({uesrname: username})
+        .deleteOne({username: username})
 
     return result.deletedCount
 }
