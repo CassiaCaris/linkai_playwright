@@ -69,7 +69,7 @@ Durante esta jornada estou praticando e consolidando conhecimentos em:
 - [x] O que nuca fazer com Page Objects
 - [x] Conectando Testes ao Banco de Dados
 - [x] Testes Independentes
-- [ ] Boas práticas & Custom Actions
+- [x] Boas práticas & Custom Actions
 
 ---
 
@@ -78,7 +78,8 @@ Durante esta jornada estou praticando e consolidando conhecimentos em:
 ```text
 playwright-project/
 ├── e2e/                    ← Scripts de testes automatizados (.spec.ts)
-│   ├── home.spec.ts        
+│   ├── home.spec.ts       
+│   ├── link.spec.ts 
 │   ├── login.spec.ts
 │   └── signup.spec.ts        
 ├── playwright-report/      ← Relatórios HTML gerados após a execução
@@ -87,13 +88,14 @@ playwright-project/
 │   │   ├── components      ← onde se encontra as informações dos elementos que são gerais para o portal
 │   │   |   └── Toast.ts
 │   │   ├── auth.ts
-│   │   ├── signup.ts
+│   │   ├── link.ts
 │   ├── fixtures/           ← onde se encontra as informações das massas de teste
-│   │   └── Users.ts        ← massas de teste de Login  
+│   │   └── User.ts         ← massas de teste de Login  
 │   └── database.ts/        ← onde se encontra as informações do banco de dados para remover o usuário de teste
 ├── test-results/           ← Artefatos de falhas (screenshots, vídeos, traces)
+├── package-lock.json       ← Gerenciamento de dependências e scripts
+├── package.json            ← Gerenciamento de dependências e scripts
 ├── playwright.config.ts    ← Configurações globais do Playwright
-├── package.json            ←# Gerenciamento de dependências e scripts
 └── README.md               
 ```
 
