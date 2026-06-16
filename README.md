@@ -4,11 +4,12 @@ Este repositório contém a suíte de testes de ponta a ponta (E2E) para o proje
 
 O objetivo deste módulo é validar os fluxos críticos da aplicação utilizando as melhores práticas de automação com **Playwright** e **TypeScript**. <br>
 
-Também foi utilizado o **fakerjs** no import para gerar as informações de massa de dados para o cadastro com sucesso, também é utilizado o **bcryptjs** para criptografar a senha(password) no banco de dados. <br>
+Foram utilizadas as bibliotecas **Faker.js** para geração dinâmica de dados de teste e **bcryptjs** para criptografia de senhas persistidas no banco de dados. <br>
 
-Utilização de delete e insert no banco de dados do **MongoDB**.<br>
+Manipulação de massa de dados diretamente no **MongoDB** através de operações de inserção e remoção de registros.<br>
 
-Alterado o conceito de **Page Objects** que antes olhar por *page* e agora olha por *Funcionalidade*.
+A estrutura do **Page Objects** foi evoluída de um modelo tradicional baseado em *páginas* para uma abordagem orientada a *funcionalidades (Feature-Based Actions)*, promovendo maior reutilização e manutenção do código.
+
 ---
 
 ## 🎯 Objetivos de Aprendizagem
@@ -24,20 +25,36 @@ Durante esta jornada estou praticando e consolidando conhecimentos em:
 - Geração dinâmica de dados com **Faker.js**
 - Delete e Insert de massas direto no Banco de Dados usando o **MongoDB**
 - Boas práticas de automação
-- utilização do **Bcrypt.js**
+- utilização do **bcrypt.js**
+
+---
+
+## 📐  Arquitetura e Padrões Aplicados
+
+O projeto utiliza uma abordagem híbrida baseada em:
+
+- Feature-Based Actions
+- Componentização de elementos reutilizáveis
+- Externalização de massa de testes
+- Data Driven Testing
+- Tipagem forte com TypeScript
+- Integração com MongoDB para preparação de cenários
+- Geração dinâmica de dados com Faker.js
+
+Essa estrutura reduz o acoplamento dos testes à interface e melhora a manutenção da suíte de automação.
 
 ---
 
 ## 🛠️ Tecnologias e Ferramentas
 
-- **Linguagem:** [TypeScript](https://www.typescriptlang.org/)
-- **Framework de Testes:** [Playwright](https://playwright.dev/)
-- **Runtime:** [Node.js](https://nodejs.org/)
-- **Infraestrutura:** [Docker](https://www.docker.com/) (para o Banco de Dados)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Playwright](https://playwright.dev/)
+- [Node.js](https://nodejs.org/)
+- [Docker](https://www.docker.com/) (para o Banco de Dados)
 - **CI/CD:** GitHub Actions
-- **Faker.js:** [Fakerjs](https://fakerjs.dev/) (Gere grandes quantidades de dados falsos (mas realistas) para testes)
-- **Banco de Dados:** [MongoDB](www.mongodb.com) (delete e insert de massa de dados) 
-- **bcryptjs:** [bcryptjs](https://www.npmjs.com/package/bcryptjs)
+- [Fakerjs](https://fakerjs.dev/) (Gere grandes quantidades de dados falsos (mas realistas) para testes)
+- [MongoDB](https://www.mongodb.com) (delete e insert de massa de dados) 
+- [bcryptjs](https://www.npmjs.com/package/bcryptjs)
 
 ---
 
@@ -66,7 +83,7 @@ Durante esta jornada estou praticando e consolidando conhecimentos em:
 - [x] Como Validar os Atributos dos Elementos?
 - [x] Massa de Testes com Novas Propriedades
 - [x] Boas Práticas na Separação de Interfaces
-- [x] O que nuca fazer com Page Objects
+- [x] O que nunca fazer com Page Objects
 - [x] Conectando Testes ao Banco de Dados
 - [x] Testes Independentes
 - [x] Boas práticas & Custom Actions
@@ -88,7 +105,7 @@ playwright-project/
 │   │   ├── components      ← onde se encontra as informações dos elementos que são gerais para o portal
 │   │   |   └── Toast.ts
 │   │   ├── auth.ts
-│   │   ├── link.ts
+│   │   └── link.ts
 │   ├── fixtures/           ← onde se encontra as informações das massas de teste
 │   │   └── User.ts         ← massas de teste de Login  
 │   └── database.ts/        ← onde se encontra as informações do banco de dados para remover o usuário de teste
