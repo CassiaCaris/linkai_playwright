@@ -1,8 +1,8 @@
-import { expect, Page } from '@playwright/test'
+import { Page, expect } from '@playwright/test'
 
-import { UserSignup } from '../fixtures/User'
+import { User } from '../fixtures/User'
 
-export function getSignupPage(page: Page) {
+export function getAuthActions(page: Page) {
 
     const emailField = () => {
         return page
@@ -10,11 +10,29 @@ export function getSignupPage(page: Page) {
     }
 
     return {
-        open: async () => {
+        navigatoToLogin: async () => {
+            await page.goto('http://localhost:3000/login')
+        },
+
+        navigateToSignup: async () => {
             await page.goto('http://localhost:3000/cadastro')
         },
 
-        fill: async (user: UserSignup) => {
+        doLogin: async (user: User) => {
+            await page
+                .getByRole('textbox', { name: 'Seu @username incrível' })
+                .fill(user.username)
+
+            await page
+                .getByRole('textbox', { name: 'Digite sua senha secreta' })
+                .fill(user.password)
+
+            await page
+                .getByRole('button', { name: 'Entrar' })
+                .click()
+        },
+
+        fillSignupForm: async (user: User) => {
             await page
                 .getByRole('textbox', { name: 'Como você gostaria de ser chamado?' })
                 .fill(user.name)
@@ -34,13 +52,18 @@ export function getSignupPage(page: Page) {
                 .fill(user.confirmPassword)
         },
 
-        submit: async () => {
+        submitSignupForm: async () => {
             await page
                 .getByRole('button', { name: 'Criar conta' })
                 .click()
         },
 
-        ValidateEmailFieldType: async () =>{
+        verifyUserLogin: async (user: User) => {
+            const title = page.locator('h1')
+            await expect(title).toContainText(`Olá, ${user.name}! 👋`)
+        },
+
+         ValidateEmailFieldType: async () => {
             await expect(emailField()).toHaveAttribute('type', 'email')
         }
     }

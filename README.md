@@ -4,10 +4,11 @@ Este repositório contém a suíte de testes de ponta a ponta (E2E) para o proje
 
 O objetivo deste módulo é validar os fluxos críticos da aplicação utilizando as melhores práticas de automação com **Playwright** e **TypeScript**. <br>
 
-Também foi utilizado o **fakerjs** no import para gerar as informações de massa de dados para o cadastro com sucesso. <br>
+Também foi utilizado o **fakerjs** no import para gerar as informações de massa de dados para o cadastro com sucesso, também é utilizado o **bcryptjs** para criptografar a senha(password) no banco de dados. <br>
 
-Utilização de delete e insert no banco de dados do **MongoDB**.
+Utilização de delete e insert no banco de dados do **MongoDB**.<br>
 
+Alterado o conceito de **Page Objects** que antes olhar por *page* e agora olha por *Funcionalidade*.
 ---
 
 ## 🎯 Objetivos de Aprendizagem
@@ -17,12 +18,13 @@ Durante esta jornada estou praticando e consolidando conhecimentos em:
 - Automação E2E com Playwright
 - TypeScript aplicado à automação de testes
 - Estruturação de projetos de testes
-- Page Object Model (POM)
+- Page Object por funcionalidade
 - Componentização de elementos
 - Gerenciamento de massa de testes
 - Geração dinâmica de dados com **Faker.js**
 - Delete e Insert de massas direto no Banco de Dados usando o **MongoDB**
 - Boas práticas de automação
+- utilização do **Bcrypt.js**
 
 ---
 
@@ -35,6 +37,7 @@ Durante esta jornada estou praticando e consolidando conhecimentos em:
 - **CI/CD:** GitHub Actions
 - **Faker.js:** [Fakerjs](https://fakerjs.dev/) (Gere grandes quantidades de dados falsos (mas realistas) para testes)
 - **Banco de Dados:** [MongoDB](www.mongodb.com) (delete e insert de massa de dados) 
+- **bcryptjs:** [bcryptjs](https://www.npmjs.com/package/bcryptjs)
 
 ---
 
@@ -80,14 +83,13 @@ playwright-project/
 │   └── signup.spec.ts        
 ├── playwright-report/      ← Relatórios HTML gerados após a execução
 ├── support/   
-│   ├── fixtures/           ← onde se encontra as informações das massas de teste
-│   │   └── Users.ts        ← massas de teste de Login
-│   ├── pages/              ← onde se encontra as informações dos elementos
+│   ├── actions/            ← onde se encontra as informações das funcionalidades
 │   │   ├── components      ← onde se encontra as informações dos elementos que são gerais para o portal
-│   │   |   ├── Toast.ts
-│   │   ├── DashPage.ts
-│   │   ├── LoginPage.ts
-│   │   └── SignupPage.ts    
+│   │   |   └── Toast.ts
+│   │   ├── auth.ts
+│   │   ├── signup.ts
+│   ├── fixtures/           ← onde se encontra as informações das massas de teste
+│   │   └── Users.ts        ← massas de teste de Login  
 │   └── database.ts/        ← onde se encontra as informações do banco de dados para remover o usuário de teste
 ├── test-results/           ← Artefatos de falhas (screenshots, vídeos, traces)
 ├── playwright.config.ts    ← Configurações globais do Playwright
@@ -172,3 +174,4 @@ A cada módulo concluído, novas funcionalidades, padrões e melhorias serão in
 - [Documentação Oficial do Fakerjs](https://fakerjs.dev/)
 - [Documentação Oficial do Node para MongoDB](https://www.npmjs.com/package/mongodb)
 - [Documentação MongoDB](www.mongodb.com)
+- [Documentação Oficial do Node para o bcryptjs](https://www.npmjs.com/package/bcryptjs)
