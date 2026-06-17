@@ -26,6 +26,7 @@ Durante esta jornada estou praticando e consolidando conhecimentos em:
 - Delete e Insert de massas direto no Banco de Dados usando o **MongoDB**
 - Boas práticas de automação
 - utilização do **bcrypt.js**
+- inclusões de Arrays e Loops no código
 
 ---
 
@@ -40,6 +41,7 @@ O projeto utiliza uma abordagem híbrida baseada em:
 - Tipagem forte com TypeScript
 - Integração com MongoDB para preparação de cenários
 - Geração dinâmica de dados com Faker.js
+- inclusões de Arrays e Loops no código
 
 Essa estrutura reduz o acoplamento dos testes à interface e melhora a manutenção da suíte de automação.
 
@@ -111,14 +113,16 @@ playwright-project/
 │   ├── home.spec.ts       
 │   ├── link.spec.ts 
 │   ├── login.spec.ts
-│   └── signup.spec.ts        
+│   ├── signup.spec.ts 
+│   └── social.spec.ts        
 ├── playwright-report/      ← Relatórios HTML gerados após a execução
 ├── support/   
 │   ├── actions/            ← onde se encontra as informações das funcionalidades
 │   │   ├── components      ← onde se encontra as informações dos elementos que são gerais para o portal
 │   │   |   └── Toast.ts
 │   │   ├── auth.ts
-│   │   └── link.ts
+│   │   ├── link.ts
+│   │   └── social.ts
 │   ├── fixtures/           ← onde se encontra as informações das massas de teste
 │   │   └── User.ts         ← massas de teste de Login  
 │   └── database.ts/        ← onde se encontra as informações do banco de dados para remover o usuário de teste
