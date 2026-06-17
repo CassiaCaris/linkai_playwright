@@ -91,7 +91,7 @@ Essa estrutura reduz o acoplamento dos testes à interface e melhora a manutenç
 ### ✅ Testes finais, recursos extras, configurações e encerramento
 
 - [x] Cadastros com Arrays e Loops
-- [ ] Testando o Cadastro de Redes Sociais
+- [x] Testando o Cadastro de Redes Sociais
 - [ ] Consumindo a API
 - [ ] Construindo a Camada de Serviços
 - [ ] Nova Versão, Nova Regressão

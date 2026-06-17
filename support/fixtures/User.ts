@@ -102,3 +102,21 @@ export function getUserwithLinks() {
     ]
   }
 }
+
+export function getUserwithSocialMedia() {
+
+  const defaultPassword = 'pwd123'
+
+  return {
+    name: 'John Leno',
+    username: 'leno',
+    email: 'johnleno@link.ai',
+    password: defaultPassword,
+    confirmPassword: defaultPassword,
+    socialMedia: {
+      github: 'johnleno',
+      linkedin: 'johnleno',
+      instagram: 'johnleno'
+    }
+  }
+}
