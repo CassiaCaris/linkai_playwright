@@ -88,6 +88,19 @@ Essa estrutura reduz o acoplamento dos testes à interface e melhora a manutenç
 - [x] Testes Independentes
 - [x] Boas práticas & Custom Actions
 
+### ✅ Testes finais, recursos extras, configurações e encerramento
+
+- [x] Cadastros com Arrays e Loops
+- [ ] Testando o Cadastro de Redes Sociais
+- [ ] Consumindo a API
+- [ ] Construindo a Camada de Serviços
+- [ ] Nova Versão, Nova Regressão
+- [ ] Cada Escolha é uma Renúncia
+- [ ] Configurando URL Base
+- [ ] Regressão pela CLI e Screenshots
+- [ ] Evidencias em Video
+- [ ] Encerramento
+
 ---
 
 ## 📁 Estrutura do Projeto

@@ -1,5 +1,7 @@
 import { Page, expect } from '@playwright/test'
 
+import { Link } from '../fixtures/User'
+
 export function getLinkActions(page: Page) {
     return {
         openModal: async () => {
@@ -14,14 +16,14 @@ export function getLinkActions(page: Page) {
             await expect(modalTitle).toBeVisible()
         },
 
-        submitLinkForm: async (title: string, url: string) => {
+        submitLinkForm: async (link: Link) => {
             await page
                 .getByRole('textbox', { name: 'Nome do Link' })
-                .fill(title)
+                .fill(link.title)
 
             await page
                 .getByRole('textbox', { name: 'URL' })
-                .fill(url)
+                .fill(link.url)
 
             await page
                 .getByRole('button', { name: 'Adicionar Link' })
