@@ -1,14 +1,14 @@
 # 🎭 Linkaí - Automação de Testes com Playwright
 
-Este repositório contém a suíte de testes de ponta a ponta (E2E) para o projeto **Linkaí**, um gerenciador de links pessoais que integra uma API REST (Node.js), banco de dados NoSQL (MongoDB) e um Frontend Web (React/Vite).<br>
+Este repositório contém a suíte de testes automatizados do projeto Linkaí, um gerenciador de links pessoais que integra uma API REST (**Node.js**), banco de dados NoSQL (**MongoDB**) e um Frontend Web (**React/Vite**).
 
-O objetivo deste módulo é validar os fluxos críticos da aplicação utilizando as melhores práticas de automação com **Playwright** e **TypeScript**. <br>
+O projeto contempla tanto testes End-to-End (E2E) da interface *WEB* quanto testes de *API*, utilizando **Playwright** e **TypeScript** para validação dos fluxos críticos da aplicação.
 
-Foram utilizadas as bibliotecas **Faker.js** para geração dinâmica de dados de teste e **bcryptjs** para criptografia de senhas persistidas no banco de dados. <br>
+Além da automação dos cenários funcionais, foram aplicados conceitos de gerenciamento de massa de dados, integração com banco de dados, consumo de **APIs REST**, geração dinâmica de dados com **Faker.js**, criptografia de senhas com **bcryptjs** e utilização do **Bruno** para documentação e validação dos endpoints da API.
 
-Manipulação de massa de dados diretamente no **MongoDB** através de operações de inserção e remoção de registros.<br>
+A preparação dos cenários é realizada através de operações de inserção e remoção de registros diretamente no **MongoDB**, garantindo independência e confiabilidade na execução dos testes.
 
-A estrutura do **Page Objects** foi evoluída de um modelo tradicional baseado em *páginas* para uma abordagem orientada a *funcionalidades (Feature-Based Actions)*, promovendo maior reutilização e manutenção do código.
+A arquitetura do projeto evoluiu de um modelo tradicional baseado em **Page Objects** para uma abordagem orientada a *funcionalidades (Feature-Based Actions)*, além da implementação de uma camada voltada para consumo e validação de serviços da API.
 
 ---
 
@@ -26,7 +26,10 @@ Durante esta jornada estou praticando e consolidando conhecimentos em:
 - Delete e Insert de massas direto no Banco de Dados usando o **MongoDB**
 - Boas práticas de automação
 - utilização do **bcrypt.js**
-- inclusões de Arrays e Loops no código
+- Consumo de APIs REST
+- Automação de testes de API com Playwright
+- Utilização do Bruno para documentação e validação de endpoints
+- Manipulação de Arrays e Loops para execução de cenários em massa
 
 ---
 
@@ -41,9 +44,39 @@ O projeto utiliza uma abordagem híbrida baseada em:
 - Tipagem forte com TypeScript
 - Integração com MongoDB para preparação de cenários
 - Geração dinâmica de dados com Faker.js
-- inclusões de Arrays e Loops no código
+- Data Driven Testing com Arrays e Loops
+- Camada de consumo de APIs REST
+- Automação de testes de API utilizando Playwright Request API
+- Documentação e coleções de API com Bruno
 
 Essa estrutura reduz o acoplamento dos testes à interface e melhora a manutenção da suíte de automação.
+
+---
+
+## 🧪 Escopo dos Testes
+
+O projeto contempla dois tipos principais de automação:
+
+### 🌐 Testes E2E Web
+Validação dos fluxos críticos da interface do usuário, garantindo a integração entre Frontend, Backend e Banco de Dados.
+
+Cobertura atual:
+- Cadastro de usuários
+- Login
+- Gerenciamento de links
+- Redes sociais
+- Página inicial
+
+### 🔌 Testes de API
+Validação direta dos endpoints da aplicação utilizando Playwright.
+
+Cobertura atual:
+- Autenticação
+- Perfil do usuário
+- Consumo de endpoints REST
+- Validações de status code e payloads
+
+Os cenários utilizam preparação e limpeza de dados diretamente no MongoDB para garantir independência entre execuções.
 
 ---
 
@@ -57,6 +90,7 @@ Essa estrutura reduz o acoplamento dos testes à interface e melhora a manutenç
 - [Fakerjs](https://fakerjs.dev/) (Gere grandes quantidades de dados falsos (mas realistas) para testes)
 - [MongoDB](https://www.mongodb.com) (delete e insert de massa de dados) 
 - [bcryptjs](https://www.npmjs.com/package/bcryptjs)
+- [bruno](https://www.usebruno.com/) (Documentação e validação de APIs)
 
 ---
 
@@ -94,7 +128,7 @@ Essa estrutura reduz o acoplamento dos testes à interface e melhora a manutenç
 
 - [x] Cadastros com Arrays e Loops
 - [x] Testando o Cadastro de Redes Sociais
-- [ ] Consumindo a API
+- [x] Consumindo a API
 - [ ] Construindo a Camada de Serviços
 - [ ] Nova Versão, Nova Regressão
 - [ ] Cada Escolha é uma Renúncia
@@ -109,12 +143,19 @@ Essa estrutura reduz o acoplamento dos testes à interface e melhora a manutenç
 
 ```text
 playwright-project/
+├── api-doc/                ← Pasta onde se encontram as api's do projeto
+│   ├── Auth/          
+│   ├── enviroments 
+│   ├── Links
+│   ├── social 
+│   └── bruno.json   
 ├── e2e/                    ← Scripts de testes automatizados (.spec.ts)
-│   ├── home.spec.ts       
-│   ├── link.spec.ts 
-│   ├── login.spec.ts
-│   ├── signup.spec.ts 
-│   └── social.spec.ts        
+│   ├── home.spec.ts        ← Testes E2E Web - Dados da Home
+│   ├── link.spec.ts        ← Testes E2E Web - cadastro de links
+│   ├── login.spec.ts       ← Testes E2E Web - acesso ao login
+│   ├── profile.spec.ts     ← Testes de API
+│   ├── signup.spec.ts      ← Testes E2E Web - cadastro de usuários
+│   └── social.spec.ts      ← Testes E2E Web - cadastro de links  
 ├── playwright-report/      ← Relatórios HTML gerados após a execução
 ├── support/   
 │   ├── actions/            ← onde se encontra as informações das funcionalidades
@@ -211,3 +252,4 @@ A cada módulo concluído, novas funcionalidades, padrões e melhorias serão in
 - [Documentação Oficial do Node para MongoDB](https://www.npmjs.com/package/mongodb)
 - [Documentação MongoDB](www.mongodb.com)
 - [Documentação Oficial do Node para o bcryptjs](https://www.npmjs.com/package/bcryptjs)
+- [bruno](https://www.usebruno.com/) (Documentação e validação de APIs)
