@@ -1,4 +1,6 @@
-# 🎭 Linkaí - Automação de Testes com Playwright
+# 🎭 Linkaí - Jornada de Estudos em Automação com Playwright
+
+## 📖 Sobre o Projeto
 
 Este repositório contém a suíte de testes automatizados do projeto Linkaí, um gerenciador de links pessoais que integra uma API REST (**Node.js**), banco de dados NoSQL (**MongoDB**) e um Frontend Web (**React/Vite**).
 
@@ -10,141 +12,103 @@ A preparação dos cenários é realizada através de operações de inserção 
 
 A arquitetura do projeto evoluiu de um modelo tradicional baseado em **Page Objects** para uma abordagem orientada a *funcionalidades (Feature-Based Actions)*, além da implementação de uma camada voltada para consumo e validação de serviços da API.
 
----
+Durante o desenvolvimento foram aplicados conceitos como:
 
-## 🧪 Escopo dos Testes
-
-O projeto contempla dois tipos principais de automação:
-
-### 🌐 Testes E2E Web
-Validação dos fluxos críticos da interface do usuário, garantindo a integração entre Frontend, Backend e Banco de Dados.
-
-Cobertura atual:
-- Cadastro de usuários
-- Login
-- Gerenciamento de links
-- Redes sociais
-- Página inicial
-
-### 🔌 Testes de API
-Validação direta dos endpoints da aplicação utilizando Playwright.
-
-Cobertura atual:
-- Autenticação
-- Perfil do usuário
-- Consumo de endpoints REST
-- Validações de status code e payloads
-
-Os cenários utilizam preparação e limpeza de dados diretamente no MongoDB para garantir independência entre execuções.
-
----
-
-## 🎯 Objetivos de Aprendizagem
-
-Durante esta jornada estou praticando e consolidando conhecimentos em:
-
-- Automação E2E com Playwright
-- TypeScript aplicado à automação de testes
-- Estruturação de projetos de testes
-- Page Object por funcionalidade
-- Componentização de elementos
-- Gerenciamento de massa de testes
-- Geração dinâmica de dados com **Faker.js**
-- Delete e Insert de massas direto no Banco de Dados usando o **MongoDB**
-- Boas práticas de automação
-- utilização do **bcrypt.js**
+- Automação E2E
+- Automação de API
+- TypeScript
+- MongoDB
+- Faker.js
+- bcryptjs
+- Data Driven Testing
+- Feature-Based Actions
+- Integração com Banco de Dados
 - Consumo de APIs REST
-- Automação de testes de API com Playwright
-- Utilização do Bruno para documentação e validação de endpoints
-- Manipulação de Arrays e Loops para execução de cenários em massa
-- Configurando as Specs para executra paralelamento e de forma serial
-- Configurando a URL base na raiz do projeto (playwright.config.ts)
-- Geração do relatório nativo do Playwright
-- Inclusão dos screenshot no relatorio para qualquer resultado da execução seja **Sucesso** ou **Falha**
-- Geração do video no relatório
 
 ---
 
-## 📐  Arquitetura e Padrões Aplicados
+## 🎯 Objetivo da Jornada
 
-O projeto utiliza uma abordagem híbrida baseada em:
+Este projeto foi utilizado como laboratório prático para consolidar conhecimentos em:
+
+- Estruturação de projetos de automação
+- Criação de testes E2E
+- Criação de testes de API
+- Gerenciamento de massa de dados
+- Integração com banco de dados
+- Componentização e reutilização de código
+- Boas práticas de automação
+- Estratégias para redução de manutenção dos testes
+
+---
+
+## 🚀 Principais Aprendizados
+
+### ✅ Automação Web
+
+- Login
+- Cadastro de usuários
+- Cadastro de links
+- Cadastro de redes sociais
+- Validações de interface
+- Componentização de elementos
+
+### ✅ Automação de API
+
+- Consumo de endpoints REST
+- Validação de respostas HTTP
+- Validação de payloads
+- Reutilização de serviços
+- Criação de camada de acesso à API
+
+### ✅ Gerenciamento de Dados
+
+- Inserção de dados no MongoDB
+- Remoção de dados para preparação de cenários
+- Geração dinâmica de usuários com Faker.js
+- Criptografia de senhas com bcryptjs
+
+### ✅ Arquitetura
 
 - Feature-Based Actions
-- Componentização de elementos reutilizáveis
-- Externalização de massa de testes
 - Data Driven Testing
 - Tipagem forte com TypeScript
-- Integração com MongoDB para preparação de cenários
-- Geração dinâmica de dados com Faker.js
-- Data Driven Testing com Arrays e Loops
-- Camada de consumo de APIs REST
-- Automação de testes de API utilizando Playwright Request API
-- Documentação e coleções de API com Bruno
-- Configurando a Spec de Profile e Social para executar de forma serial, devido a dependencia da massa
-- Configurando a URL base na raiz do projeto (playwright.config.ts)
-- geração do relatório nativo do Playwright
-- Configuração de video no relatório
-
-Essa estrutura reduz o acoplamento dos testes à interface e melhora a manutenção da suíte de automação.
+- Externalização de massa de testes
+- Componentização
 
 ---
 
-## 🛠️ Tecnologias e Ferramentas
+## 📈 Evolução Durante a Jornada
 
-- [TypeScript](https://www.typescriptlang.org/)
+Ao longo do curso o projeto passou pelas seguintes evoluções:
+
+| Etapa | Evolução |
+|---------|---------|
+| Módulo 05 | Primeiros testes com Playwright |
+| Módulo 06 | Page Objects e gerenciamento de massa |
+| Módulo 07 | Integração com MongoDB e independência dos testes |
+| Módulo 08 | Testes de API, Arrays, Loops e serviços |
+
+---
+
+## 🛠 Tecnologias Utilizadas
+
 - [Playwright](https://playwright.dev/)
+- TypeScript
 - [Node.js](https://nodejs.org/)
-- [Docker](https://www.docker.com/) (para o Banco de Dados)
-- **CI/CD:** GitHub Actions
-- [Fakerjs](https://fakerjs.dev/) (Gere grandes quantidades de dados falsos (mas realistas) para testes)
-- [MongoDB](https://www.mongodb.com) (delete e insert de massa de dados) 
+- [MongoDB](https://www.mongodb.com)
+- [Faker.js](https://fakerjs.dev/)
 - [bcryptjs](https://www.npmjs.com/package/bcryptjs)
-- [bruno](https://www.usebruno.com/) (Documentação e validação de APIs)
+- [Bruno](https://www.usebruno.com/)
+- [Docker](https://www.docker.com/)
 
 ---
 
-## Progresso da Jornada
+## 📚 O que este repositório representa
 
-### ✅ Iniciando com Playwright
+Este não é um framework corporativo ou produto final.
 
-- [x] Primeiros passos com Playwright
-- [x] Estrutura inicial do projeto
-- [x] Testes Sincronizados com o código
-- [x] Test Generator
-- [x] Cobertura de Testes
-
-### ✅ Estrutura, Reuso e Massa de Testes
-
-- [x] Page Objects
-- [x] Components
-- [x] Interfaces
-- [x] Externalização da Massa de Teste
-- [x] Deu ruim na massa de Testes
-- [x] Faker.js
-
-### ✅ Boas Práticas e Integrações
-
-- [x] Melhorando a legibilidade
-- [x] Como Validar os Atributos dos Elementos?
-- [x] Massa de Testes com Novas Propriedades
-- [x] Boas Práticas na Separação de Interfaces
-- [x] O que nunca fazer com Page Objects
-- [x] Conectando Testes ao Banco de Dados
-- [x] Testes Independentes
-- [x] Boas práticas & Custom Actions
-
-### ✅ Testes finais, recursos extras, configurações e encerramento
-
-- [x] Cadastros com Arrays e Loops
-- [x] Testando o Cadastro de Redes Sociais
-- [x] Consumindo a API
-- [x] Construindo a Camada de Serviços
-- [x] Nova Versão, Nova Regressão
-- [x] Cada Escolha é uma Renúncia
-- [x] Configurando URL Base
-- [x] Regressão pela CLI e Screenshots
-- [x] Evidencias em Video
-- [ ] Encerramento
+Ele representa minha evolução prática durante os estudos em automação de testes, servindo como registro dos conceitos aprendidos, experimentações realizadas e boas práticas aplicadas ao longo da Jornada TechQA.
 
 ---
 
@@ -266,7 +230,7 @@ Visuliação do relatório quando se tem video
 Ao clicar no caso de teste
 ![Detalhe do Caso de teste com screenshot](doc/DetalheRelatorio.png)
 Imagens do Detalhe do caso de teste tendo o screenshot e o Video para garantia da execução
-![1ª Parte do detalhe do Caso de teste com screenshot](doc/DetalheRelatorioScreenshot.png)
+![1ª Parte do detalhe do Caso de teste com screenshot](doc/DetalheRelatorioScreenshot.png)<br>
 ![2ª Parte do detalhe do Caso de teste com screenshot + video](doc/DetalheRelatorioScreenshotVideo.png)
 
 ---
@@ -286,16 +250,3 @@ Este repositório contém apenas a implementação prática dos conceitos estuda
 Este projeto está sendo construído gradativamente durante a Jornada TechQA e será utilizado como laboratório para aplicação prática dos conceitos aprendidos.
 
 A cada módulo concluído, novas funcionalidades, padrões e melhorias serão incorporadas ao framework.
-
----
-
-## 📚 Referências Úteis
-
-- [Documentação Oficial Playwright](https://playwright.dev/docs/intro)
-- [Melhores Práticas em Seletores](https://playwright.dev/docs/locators)
-- [Guia de Instalação Docker (WSL2)](https://dev.to/papitofernando/instalando-o-docker-no-windows-10-home-ou-professional-com-wsl-2-26m3)
-- [Documentação Oficial do Fakerjs](https://fakerjs.dev/)
-- [Documentação Oficial do Node para MongoDB](https://www.npmjs.com/package/mongodb)
-- [Documentação MongoDB](www.mongodb.com)
-- [Documentação Oficial do Node para o bcryptjs](https://www.npmjs.com/package/bcryptjs)
-- [bruno](https://www.usebruno.com/) (Documentação e validação de APIs)
