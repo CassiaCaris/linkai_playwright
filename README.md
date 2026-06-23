@@ -57,6 +57,7 @@ Durante esta jornada estou praticando e consolidando conhecimentos em:
 - Automação de testes de API com Playwright
 - Utilização do Bruno para documentação e validação de endpoints
 - Manipulação de Arrays e Loops para execução de cenários em massa
+- Configurando as Specs para executra paralelamento e de forma serial
 
 ---
 
@@ -75,6 +76,7 @@ O projeto utiliza uma abordagem híbrida baseada em:
 - Camada de consumo de APIs REST
 - Automação de testes de API utilizando Playwright Request API
 - Documentação e coleções de API com Bruno
+- Configurando a Spec de Profile e Social para executar de forma serial, devido a dependencia da massa
 
 Essa estrutura reduz o acoplamento dos testes à interface e melhora a manutenção da suíte de automação.
 
@@ -130,8 +132,8 @@ Essa estrutura reduz o acoplamento dos testes à interface e melhora a manutenç
 - [x] Testando o Cadastro de Redes Sociais
 - [x] Consumindo a API
 - [x] Construindo a Camada de Serviços
-- [ ] Nova Versão, Nova Regressão
-- [ ] Cada Escolha é uma Renúncia
+- [x] Nova Versão, Nova Regressão
+- [x] Cada Escolha é uma Renúncia
 - [ ] Configurando URL Base
 - [ ] Regressão pela CLI e Screenshots
 - [ ] Evidencias em Video

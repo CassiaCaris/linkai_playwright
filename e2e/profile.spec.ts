@@ -1,57 +1,52 @@
-import { test } from '@playwright/test'
+import { expect, request, test } from '@playwright/test'
 
 import { removeUserByEmail } from '../support/database'
-
 import { createFullProfile } from '../support/services'
 
-test('Deve exibir oos meus links no meu perfil', async ({ request }) => {
+import profile from '../support/fixtures/profile.json'
 
-    const profile = {
-        user: {
-            name: 'Steve Jobs',
-            email: 'jobs@apple.com',
-            username: 'stevejobs',
-            bio: '',
-            password: 'pwd123'
-        },
-        links: [
-            {
-                name: 'Meu Blog',
-                url: 'https://blog.apple.com'
-            },
-            {
-                name: 'Canal no Youtube',
-                url: 'https://www.yooutube.com/@stevejobs'
-            },
-            {
-                name: 'Pixar',
-                url: 'https://www.pixar.com'
-            },
-            {
-                name: 'Stanford',
-                url: 'https://www.stanford.edu'
-            },
-            {
-                name: 'TED Talk',
-                url: 'https://www.ted.com/talks/steve_jobs_how_to_live_before_you_die'
-            }
-        ],
-        socials: {
-            github: {
-                platform: 'GitHub',
-                username: 'stevejobsdev'
-            },
-            linkedin: {
-                platform: 'LinkedIn',
-                username: 'stevejobs'
-            },
-            instagram: {
-                platform: 'Instagram',
-                username: 'stevejobs'
-            }
+//quando criado o describe.serial estamos falando que essa Spec será a unica executando de forma sequencial e não paralela.
+// para não qter que criar massa para cada caso de teste. 
+// Para executar no paralelo é necessário criar massa para cada caso de teste
+test.describe.serial('Perfil do usuário', () => {
+
+    test.beforeAll(async ({ request }) => {
+        await removeUserByEmail(profile.user.email)
+        await createFullProfile(request, profile)
+    })
+
+    test('Deve exibir os meus links no meu perfil', async ({ page, request }) => {
+
+        await page.goto(`http://localhost:3000/${profile.user.username}`)
+
+        //Checkpoint
+        await expect(page.getByRole('heading', { name: profile.user.name })).toBeVisible()
+
+        for (const link of profile.links) {
+            const iem = page.locator(`a[href="${link.url}"]`)
+            await expect(iem).toBeVisible()
+            await expect(iem).toContainText(link.name)
         }
-    }
+    })
 
-    await removeUserByEmail(profile.user.email)
-    await createFullProfile(request, profile)
+    test('Deve exibir as redes sociais do meu perfil', async ({ page, request }) => {
+
+        await page.goto(`http://localhost:3000/${profile.user.username}`)
+
+        //Checkpoint
+        await expect(page.getByRole('heading', { name: profile.user.name })).toBeVisible()
+
+        const socialUrls = [
+            `https://github.com/${profile.socials.github.username}`,
+            `https://instagram.com/${profile.socials.instagram.username}`,
+            `https://linkedin.com/in/${profile.socials.linkedin.username}`,
+        ]
+
+        for (const url of socialUrls) {
+            const item = page.locator(`a[href="${url}"]`)
+            await expect(item).toBeVisible()
+        }
+    })
+
 })
+
