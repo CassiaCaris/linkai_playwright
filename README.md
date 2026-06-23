@@ -58,6 +58,7 @@ Durante esta jornada estou praticando e consolidando conhecimentos em:
 - Utilização do Bruno para documentação e validação de endpoints
 - Manipulação de Arrays e Loops para execução de cenários em massa
 - Configurando as Specs para executra paralelamento e de forma serial
+- Configurando a URL base na raiz do projeto (playwright.config.ts)
 
 ---
 
@@ -77,6 +78,7 @@ O projeto utiliza uma abordagem híbrida baseada em:
 - Automação de testes de API utilizando Playwright Request API
 - Documentação e coleções de API com Bruno
 - Configurando a Spec de Profile e Social para executar de forma serial, devido a dependencia da massa
+- Configurando a URL base na raiz do projeto (playwright.config.ts)
 
 Essa estrutura reduz o acoplamento dos testes à interface e melhora a manutenção da suíte de automação.
 
@@ -134,7 +136,7 @@ Essa estrutura reduz o acoplamento dos testes à interface e melhora a manutenç
 - [x] Construindo a Camada de Serviços
 - [x] Nova Versão, Nova Regressão
 - [x] Cada Escolha é uma Renúncia
-- [ ] Configurando URL Base
+- [x] Configurando URL Base
 - [ ] Regressão pela CLI e Screenshots
 - [ ] Evidencias em Video
 - [ ] Encerramento
