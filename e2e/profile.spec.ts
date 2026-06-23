@@ -20,8 +20,8 @@ test('Deve exibir oos meus links no meu perfil', async ({ request }) => {
                 url: 'https://blog.apple.com'
             },
             {
-                name: 'Apple',
-                url: 'https://www.apple.com'
+                name: 'Canal no Youtube',
+                url: 'https://www.yooutube.com/@stevejobs'
             },
             {
                 name: 'Pixar',
