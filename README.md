@@ -242,11 +242,3 @@ As anotações, resumos e conteúdos teóricos desta jornada estão centralizado
 👉 [jornada_TechQa](https://github.com/CassiaCaris/jornada_TechQa)
 
 Este repositório contém apenas a implementação prática dos conceitos estudados durante a jornada.
-
----
-
-## 📈 Evolução do Projeto
-
-Este projeto está sendo construído gradativamente durante a Jornada TechQA e será utilizado como laboratório para aplicação prática dos conceitos aprendidos.
-
-A cada módulo concluído, novas funcionalidades, padrões e melhorias serão incorporadas ao framework.
