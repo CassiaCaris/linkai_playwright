@@ -61,6 +61,7 @@ Durante esta jornada estou praticando e consolidando conhecimentos em:
 - Configurando a URL base na raiz do projeto (playwright.config.ts)
 - Geração do relatório nativo do Playwright
 - Inclusão dos screenshot no relatorio para qualquer resultado da execução seja **Sucesso** ou **Falha**
+- Geração do video no relatório
 
 ---
 
@@ -82,6 +83,7 @@ O projeto utiliza uma abordagem híbrida baseada em:
 - Configurando a Spec de Profile e Social para executar de forma serial, devido a dependencia da massa
 - Configurando a URL base na raiz do projeto (playwright.config.ts)
 - geração do relatório nativo do Playwright
+- Configuração de video no relatório
 
 Essa estrutura reduz o acoplamento dos testes à interface e melhora a manutenção da suíte de automação.
 
@@ -141,7 +143,7 @@ Essa estrutura reduz o acoplamento dos testes à interface e melhora a manutenç
 - [x] Cada Escolha é uma Renúncia
 - [x] Configurando URL Base
 - [x] Regressão pela CLI e Screenshots
-- [ ] Evidencias em Video
+- [x] Evidencias em Video
 - [ ] Encerramento
 
 ---
@@ -178,7 +180,7 @@ playwright-project/
 │   │   └── User.ts         ← massas de teste de Login  
 │   ├── database.ts/        ← onde se encontra as informações do banco de dados para remover o usuário de teste
 │   └── service.ts/         ← onde se encontra as informações ddo serviço
-├── test-results/           ← Artefatos de falhas (screenshots, vídeos, traces)
+├── test-results/           ← Artefatos dos casos de testes (screenshots, vídeos)
 ├── package-lock.json       ← Gerenciamento de dependências e scripts
 ├── package.json            ← Gerenciamento de dependências e scripts
 ├── playwright.config.ts    ← Configurações globais do Playwright
@@ -236,7 +238,7 @@ npx playwright install --with-deps
 
 ---
 
-## Visualização do Relatorio da execução
+## Visualização do Relatório da execução
 
 para gerar o relatorio é necessário executar o comando:
 
@@ -244,19 +246,26 @@ para gerar o relatorio é necessário executar o comando:
 ```bash
 npx playwright test
 ```
+ou 
+```bash
+npx playwright show-report
+```
 ![Execução no terminal na pasta do projeto](doc/execuçãoHedless.png)
 
 ### Relatório em HTML
-Após a execução será gerado o relatório na pasta *\playwright-report*
-**Obs.:** Nessa pasta também ficará armazenado os screenshots de todos os testes.
-![Pasta do relatório](doc/pastaRelatorio.png)
+Após a execução será gerado o relatório na pasta *\playwright-report*.<br>
+**Obs.:** Nessa pasta também ficará armazenado os screenshots de todos os testes.<br>
+![Pasta do relatório somente com os Screenshot](doc/pastaRelatorio.png)
 
 ### Apresentação do Relatório
 Abrindo o relatório no navegador a visualização será essa:
-![Relatório](doc/Relatorio.png)
+![Relatório somente com Screenshot](doc/Relatorio.png)
+![Relatório somente com Screenshot e Video](doc/Relatorio_Screenchot_video.png)
 
 Ao clicar no caso de teste
-![Detalhe do Caso de teste no Relatório](doc/DetalheRelatorio.png)
+![Detalhe do Caso de teste com screenshot](doc/DetalheRelatorio.png)
+![1ª Parte do detalhe do Caso de teste com screenshot](doc/DetalheRelatorioScreenshot.png)
+![2ª Parte do detalhe do Caso de teste com screenshot + video](doc/DetalheRelatorioScreenshotVideo.png)
 
 ---
 
