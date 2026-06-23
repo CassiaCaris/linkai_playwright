@@ -230,8 +230,7 @@ Visuliação do relatório quando se tem video
 Ao clicar no caso de teste
 ![Detalhe do Caso de teste com screenshot](doc/DetalheRelatorio.png)
 Imagens do Detalhe do caso de teste tendo o screenshot e o Video para garantia da execução
-![1ª Parte do detalhe do Caso de teste com screenshot](doc/DetalheRelatorioScreenshot.png)<br>
-![2ª Parte do detalhe do Caso de teste com screenshot + video](doc/DetalheRelatorioScreenshotVideo.png)
+![Detalhe do Caso de teste com screenshot + video](doc/DetalheRelatorioScreenshotVideo.png)
 
 ---
 
