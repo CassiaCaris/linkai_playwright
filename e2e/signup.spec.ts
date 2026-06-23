@@ -5,7 +5,7 @@ import { getAuthActions } from '../support/actions/auth'
 
 import { removeUserByEmail, insertUser, removeUserByUsername } from '../support/database'
 
-import { User, getNewUser, getDuplicateUser } from '../support/fixtures/User'
+import { User, getNewUser, getDuplicateUser, getDuplicateUser2 } from '../support/fixtures/User'
 
 
 test('deve cadastrar um novo usuário com sucesso', async ({ page }) => {
@@ -30,7 +30,7 @@ test('não deve cadastrar quando o email já estiver em uso', async ({ page }) =
     const auth = getAuthActions(page)
     const toast = getToast(page)
 
-    const user: User = getDuplicateUser()
+    const user: User = getDuplicateUser2()
     await removeUserByEmail(user.email)
     await insertUser(user)
 

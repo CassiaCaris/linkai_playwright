@@ -53,6 +53,20 @@ export function getDuplicateUser() {
   }
 }
 
+export function getDuplicateUser2() {
+
+  const defaultPassword = 'pwd123'
+
+  return {
+    name: 'Joaquim',
+    username: 'joaquim',
+    email: 'joaquim@link.ai',
+    password: defaultPassword,
+    confirmPassword: defaultPassword
+  }
+}
+
+
 export function getLoginUser() {
 
   const defaultPassword = '123pwd'

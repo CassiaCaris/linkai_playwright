@@ -59,6 +59,8 @@ Durante esta jornada estou praticando e consolidando conhecimentos em:
 - Manipulação de Arrays e Loops para execução de cenários em massa
 - Configurando as Specs para executra paralelamento e de forma serial
 - Configurando a URL base na raiz do projeto (playwright.config.ts)
+- Geração do relatório nativo do Playwright
+- Inclusão dos screenshot no relatorio para qualquer resultado da execução seja **Sucesso** ou **Falha**
 
 ---
 
@@ -79,6 +81,7 @@ O projeto utiliza uma abordagem híbrida baseada em:
 - Documentação e coleções de API com Bruno
 - Configurando a Spec de Profile e Social para executar de forma serial, devido a dependencia da massa
 - Configurando a URL base na raiz do projeto (playwright.config.ts)
+- geração do relatório nativo do Playwright
 
 Essa estrutura reduz o acoplamento dos testes à interface e melhora a manutenção da suíte de automação.
 
@@ -137,7 +140,7 @@ Essa estrutura reduz o acoplamento dos testes à interface e melhora a manutenç
 - [x] Nova Versão, Nova Regressão
 - [x] Cada Escolha é uma Renúncia
 - [x] Configurando URL Base
-- [ ] Regressão pela CLI e Screenshots
+- [x] Regressão pela CLI e Screenshots
 - [ ] Evidencias em Video
 - [ ] Encerramento
 
@@ -160,7 +163,10 @@ playwright-project/
 │   ├── profile.spec.ts     ← Testes de API
 │   ├── signup.spec.ts      ← Testes E2E Web - cadastro de usuários
 │   └── social.spec.ts      ← Testes E2E Web - cadastro de links  
-├── playwright-report/      ← Relatórios HTML gerados após a execução
+├── playwright-report/      ← Relatórios HTML gerados após a execução via hedless
+│   ├── data/               ← onde se encontra os screenshots dos testes
+│   │   └── ....png
+│   └── index.html          ← onde se encontra o relatório gerado na execução hedless
 ├── support/   
 │   ├── actions/            ← onde se encontra as informações das funcionalidades
 │   │   ├── components      ← onde se encontra as informações dos elementos que são gerais para o portal
@@ -227,6 +233,30 @@ npx playwright install --with-deps
 | `npx playwright test --debug` | Abre o Inspetor do Playwright para depuração passo a passo |
 | `npx playwright show-report` | Abre o último relatório de testes gerado |
 | `npx playwright codegen http://localhost:3000/login` | abre o navegador e o generator para gerar o teste |
+
+---
+
+## Visualização do Relatorio da execução
+
+para gerar o relatorio é necessário executar o comando:
+
+### Execução da automação via hedless
+```bash
+npx playwright test
+```
+![Execução no terminal na pasta do projeto](doc/execuçãoHedless.png)
+
+### Relatório em HTML
+Após a execução será gerado o relatório na pasta *\playwright-report*
+**Obs.:** Nessa pasta também ficará armazenado os screenshots de todos os testes.
+![Pasta do relatório](doc/pastaRelatorio.png)
+
+### Apresentação do Relatório
+Abrindo o relatório no navegador a visualização será essa:
+![Relatório](doc/Relatorio.png)
+
+Ao clicar no caso de teste
+![Detalhe do Caso de teste no Relatório](doc/DetalheRelatorio.png)
 
 ---
 
