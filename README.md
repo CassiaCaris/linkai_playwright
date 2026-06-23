@@ -260,10 +260,12 @@ Após a execução será gerado o relatório na pasta *\playwright-report*.<br>
 ### Apresentação do Relatório
 Abrindo o relatório no navegador a visualização será essa:
 ![Relatório somente com Screenshot](doc/Relatorio.png)
-![Relatório somente com Screenshot e Video](doc/Relatorio_Screenchot_video.png)
+Visuliação do relatório quando se tem video 
+![Relatório somente com Screenshot e Video](doc/Relatorio_Screenshot_video.png)
 
 Ao clicar no caso de teste
 ![Detalhe do Caso de teste com screenshot](doc/DetalheRelatorio.png)
+Imagens do Detalhe do caso de teste tendo o screenshot e o Video para garantia da execução
 ![1ª Parte do detalhe do Caso de teste com screenshot](doc/DetalheRelatorioScreenshot.png)
 ![2ª Parte do detalhe do Caso de teste com screenshot + video](doc/DetalheRelatorioScreenshotVideo.png)
 
