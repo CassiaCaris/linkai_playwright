@@ -12,6 +12,33 @@ A arquitetura do projeto evoluiu de um modelo tradicional baseado em **Page Obje
 
 ---
 
+## 🧪 Escopo dos Testes
+
+O projeto contempla dois tipos principais de automação:
+
+### 🌐 Testes E2E Web
+Validação dos fluxos críticos da interface do usuário, garantindo a integração entre Frontend, Backend e Banco de Dados.
+
+Cobertura atual:
+- Cadastro de usuários
+- Login
+- Gerenciamento de links
+- Redes sociais
+- Página inicial
+
+### 🔌 Testes de API
+Validação direta dos endpoints da aplicação utilizando Playwright.
+
+Cobertura atual:
+- Autenticação
+- Perfil do usuário
+- Consumo de endpoints REST
+- Validações de status code e payloads
+
+Os cenários utilizam preparação e limpeza de dados diretamente no MongoDB para garantir independência entre execuções.
+
+---
+
 ## 🎯 Objetivos de Aprendizagem
 
 Durante esta jornada estou praticando e consolidando conhecimentos em:
@@ -50,33 +77,6 @@ O projeto utiliza uma abordagem híbrida baseada em:
 - Documentação e coleções de API com Bruno
 
 Essa estrutura reduz o acoplamento dos testes à interface e melhora a manutenção da suíte de automação.
-
----
-
-## 🧪 Escopo dos Testes
-
-O projeto contempla dois tipos principais de automação:
-
-### 🌐 Testes E2E Web
-Validação dos fluxos críticos da interface do usuário, garantindo a integração entre Frontend, Backend e Banco de Dados.
-
-Cobertura atual:
-- Cadastro de usuários
-- Login
-- Gerenciamento de links
-- Redes sociais
-- Página inicial
-
-### 🔌 Testes de API
-Validação direta dos endpoints da aplicação utilizando Playwright.
-
-Cobertura atual:
-- Autenticação
-- Perfil do usuário
-- Consumo de endpoints REST
-- Validações de status code e payloads
-
-Os cenários utilizam preparação e limpeza de dados diretamente no MongoDB para garantir independência entre execuções.
 
 ---
 
@@ -129,7 +129,7 @@ Os cenários utilizam preparação e limpeza de dados diretamente no MongoDB par
 - [x] Cadastros com Arrays e Loops
 - [x] Testando o Cadastro de Redes Sociais
 - [x] Consumindo a API
-- [ ] Construindo a Camada de Serviços
+- [x] Construindo a Camada de Serviços
 - [ ] Nova Versão, Nova Regressão
 - [ ] Cada Escolha é uma Renúncia
 - [ ] Configurando URL Base
@@ -166,7 +166,8 @@ playwright-project/
 │   │   └── social.ts
 │   ├── fixtures/           ← onde se encontra as informações das massas de teste
 │   │   └── User.ts         ← massas de teste de Login  
-│   └── database.ts/        ← onde se encontra as informações do banco de dados para remover o usuário de teste
+│   ├── database.ts/        ← onde se encontra as informações do banco de dados para remover o usuário de teste
+│   └── service.ts/         ← onde se encontra as informações ddo serviço
 ├── test-results/           ← Artefatos de falhas (screenshots, vídeos, traces)
 ├── package-lock.json       ← Gerenciamento de dependências e scripts
 ├── package.json            ← Gerenciamento de dependências e scripts
