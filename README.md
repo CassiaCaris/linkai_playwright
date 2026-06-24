@@ -114,41 +114,51 @@ Ele representa minha evolução prática durante os estudos em automação de te
 
 ## 📁 Estrutura do Projeto
 
-```text
+```bash
 playwright-project/
-├── api-doc/                ← Pasta onde se encontram as api's do projeto
-│   ├── Auth/          
-│   ├── enviroments 
-│   ├── Links
-│   ├── social 
-│   └── bruno.json   
-├── e2e/                    ← Scripts de testes automatizados (.spec.ts)
-│   ├── home.spec.ts        ← Testes E2E Web - Dados da Home
-│   ├── link.spec.ts        ← Testes E2E Web - cadastro de links
-│   ├── login.spec.ts       ← Testes E2E Web - acesso ao login
-│   ├── profile.spec.ts     ← Testes de API
-│   ├── signup.spec.ts      ← Testes E2E Web - cadastro de usuários
-│   └── social.spec.ts      ← Testes E2E Web - cadastro de links  
-├── playwright-report/      ← Relatórios HTML gerados após a execução via hedless
-│   ├── data/               ← onde se encontra os screenshots dos testes
-│   │   └── ....png
-│   └── index.html          ← onde se encontra o relatório gerado na execução hedless
-├── support/   
-│   ├── actions/            ← onde se encontra as informações das funcionalidades
-│   │   ├── components      ← onde se encontra as informações dos elementos que são gerais para o portal
-│   │   |   └── Toast.ts
+├── api-doc/                    # Documentação e coleções da API no Bruno
+│   ├── Auth/
+│   ├── environments/
+│   ├── Links/
+│   ├── social/
+│   └── bruno.json
+│
+├── doc/                        # Documentação e imagens de apoio
+│
+├── e2e/                        # Scripts de testes automatizados
+│   ├── home.spec.ts            # Testes E2E Web - Home
+│   ├── link.spec.ts            # Testes E2E Web - Links
+│   ├── login.spec.ts           # Testes E2E Web - Login
+│   ├── profile.spec.ts         # Testes de API
+│   ├── signup.spec.ts          # Testes E2E Web - Cadastro
+│   └── social.spec.ts          # Testes E2E Web - Redes sociais
+│
+├── playwright-report/          # Relatórios HTML gerados após execução
+│   ├── data/                   # onde se encontraram as evidencias (screenshot,videos)
+│   │   ├── *.webm
+│   │   └── *.png
+│   └── index.html
+│
+├── support/
+│   ├── actions/                # Ações por funcionalidade
+│   │   ├── components/         # Componentes reutilizáveis
+│   │   │   └── Toast.ts
 │   │   ├── auth.ts
 │   │   ├── link.ts
 │   │   └── social.ts
-│   ├── fixtures/           ← onde se encontra as informações das massas de teste
-│   │   └── User.ts         ← massas de teste de Login  
-│   ├── database.ts/        ← onde se encontra as informações do banco de dados para remover o usuário de teste
-│   └── service.ts/         ← onde se encontra as informações ddo serviço
-├── test-results/           ← Artefatos dos casos de testes (screenshots, vídeos)
-├── package-lock.json       ← Gerenciamento de dependências e scripts
-├── package.json            ← Gerenciamento de dependências e scripts
-├── playwright.config.ts    ← Configurações globais do Playwright
-└── README.md               
+│   │
+│   ├── fixtures/               # Massa de testes
+│   │   ├── profile.json
+│   │   └── User.ts
+│   │
+│   ├── database.ts             # Conexão e manipulação do MongoDB
+│   └── service.ts              # Camada de serviços da API
+│
+├── test-results/               # Evidências de falhas
+├── package-lock.json
+├── package.json
+├── playwright.config.ts
+└── README.md
 ```
 
 ---
